@@ -1,0 +1,22 @@
+﻿@page
+@model dotnet.Pages.ResponseModel
+@{
+}
+
+<div class="container min-vh-100 d-flex justify-content-center align-items-center">
+    <div class="text-center p-5 border rounded-3 shadow-lg bg-white" style="max-width: 400px;">
+        <div class="mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="green" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.97 8.97l2.83 2.83 5-5a.75.75 0 0 0-1.06-1.06L8.25 10.19 6.03 7.97a.75.75 0 1 0-1.06 1.06z" />
+            </svg>
+        </div>
+        <h3 class="mb-3">Success!</h3>
+        <p>
+            @TempData["message"]
+        </p>
+        <div class="d-grid gap-2">
+            <a href="#" class="btn btn-primary">Home</a>
+            <a asp-page=@TempData["link"] class="btn btn-outline-secondary">Continue</a>
+        </div>
+    </div>
+</div>

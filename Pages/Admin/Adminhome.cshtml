@@ -1,0 +1,61 @@
+﻿@page
+@model dotnet.Pages.Admin.AdminhomeModel
+@{
+
+
+
+    <div>
+        <h1>Admin Home Page</h1>.
+
+    </div>
+
+    <button class="btn-primary"> <a class="text-light text-decoration-none"  asp-page="Product" >Product</a></button>
+
+
+
+    foreach(var users in Model.CustomerList)
+    {
+            
+
+
+
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-1">
+    <div class="col-md-4">
+      <img class="img-fluid rounded mt-5" src="Upload/@users.ImgPath" alt="img" />
+    </div>
+
+    </div>
+    <div class="col-md-8">
+        <div class="card-body">
+            <h5 class="card-title"> @users.Name</h5>
+            <p class="card-text"> @users.Email</p>
+            <p class="card-text"> @users.Age</p>
+            @{
+                if (users.isActive == 1 )
+                {
+                    <span class="bg-success text-light rounded-pill">Active</span>
+                    <button class="btn-danger">
+                    <a class="text-light text-decoration-none" asp-route-id=@users.Id asp-route-status=@users.isActive asp-page=/Admin/Adminhome asp-page-handler="Status"> Disable</a>
+                    </button>
+
+                            
+                }
+                else
+                {
+                            <span class="bg-danger text-light rounded-pill">Inactive</span>
+                        <button class="btn-success" >
+                                <a class="text-light text-decoration-none" asp-route-id=@users.Id asp-route-status=@users.isActive asp-page="/Admin/Adminhome" asp-page-handler="Status"> Enable</a>
+             
+                        </button>
+                }
+                    <button class="btn-danger"> <a class="text-light text-decoration-none" asp-page-handler="Delete" asp-route-id=@users.Id>Delete</a></button>
+                    <button class="btn-primary"> <a class="text-light text-decoration-none" asp-page-handler="Edit" asp-page="Editpage" asp-route-id=@users.Id>Edit</a></button>
+             }
+        </div>
+
+
+    </div>
+</div>
+    }
+}

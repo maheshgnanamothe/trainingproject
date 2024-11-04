@@ -1,0 +1,44 @@
+﻿@page "/Product"
+@model dotnet.Pages.ProductModelClass.ProductModel
+@{
+}
+
+<div>
+    <h1>
+        Product page
+    </h1>
+</div>
+
+<form method="post">
+
+    <div class="form-group">
+        <label class="control-label" asp-for="prod.PName">Product Name</label>
+        <input class="form_control" asp-for="prod.PName" />
+        <span asp-validation-for="prod.PName" class=""></span>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label" asp-for="prod.PCategory">Product Category</label>
+        <input class="form_control" asp-for="prod.PCategory" />
+        <span asp-validation-for="prod.PCategory" class=""></span>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label" asp-for="prod.PPrice">Product Price</label>
+        <input class="form_control" asp-for="prod.PPrice" />
+        <span asp-validation-for="prod.PPrice" class=""></span>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label" asp-for="prod.Quantity">Product Quantity</label>
+        <input class="form_control" asp-for="prod.Quantity" />
+        <span asp-validation-for="prod.Quantity" class=""></span>
+    </div><div class="form-group">
+        <label class="control-label" asp-for="prod.Description">Product Description</label>
+        <input class="form_control" asp-for="prod.Description" />
+        <span asp-validation-for="prod.Description" class=""></span>
+    </div>
+
+    <input type="submit" class="btn btn-primary mt-3" />
+
+</form>
